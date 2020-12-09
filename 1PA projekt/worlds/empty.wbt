@@ -1,0 +1,265 @@
+#VRML_SIM R2020b utf8
+WorldInfo {
+  coordinateSystem "NUE"
+  contactProperties [
+    ContactProperties {
+      material2 "default1"
+      coulombFriction [
+        0
+      ]
+      bounce 1
+      bounceVelocity 0.001
+    }
+  ]
+}
+Viewpoint {
+  fieldOfView 1.5
+  orientation 0.9992788319000206 -0.03494528584837822 -0.014854060505641692 5.430234362260656
+  position -0.10682061304416635 1.5183561958691776 1.4588229703895612
+}
+TexturedBackgroundLight {
+  texture "noon_cloudy_empty"
+}
+Background {
+  skyColor [
+    0.572549 1 0.219608
+  ]
+  backUrl [
+    "E:/concept/work/texture.png"
+  ]
+  bottomUrl [
+    "E:/concept/work/texture.png"
+  ]
+  frontUrl [
+    "E:/concept/work/texture.png"
+  ]
+  leftUrl [
+    "E:/concept/work/texture.png"
+  ]
+  rightUrl [
+    "E:/concept/work/texture.png"
+  ]
+  topUrl [
+    "E:/concept/work/texture.png"
+  ]
+}
+RectangleArena {
+  floorSize 3 1.5
+  floorAppearance Appearance {
+    material Material {
+      ambientIntensity 1
+      diffuseColor 0.0705882 0.231373 0.133333
+      emissiveColor 1 1 1
+      shininess 1
+      specularColor 0.0588235 0.933333 0
+      transparency 0.01
+    }
+    texture ImageTexture {
+      url [
+        "E:/concept/work/texture3.png"
+      ]
+    }
+    textureTransform TextureTransform {
+      center 0.5 0.5
+      translation 2 0
+    }
+  }
+  wallThickness 0.05
+  wallHeight 0.2
+  wallAppearance Appearance {
+    material Material {
+    }
+    textureTransform TextureTransform {
+      center 1 1
+    }
+  }
+}
+Base1 {
+  translation -1.29 0.0200001 -0.265
+  rotation 0 0 1 3.14159
+  name "gate2(5)"
+  controller "gate12"
+  supervisor TRUE
+  rightSlot TinkerbotsDistanceSensor {
+    rotation 0 0 1 -1.5707996938995747
+    name "gateds12"
+  }
+}
+Base1 {
+  translation -1.26 0.0200001 -0.725
+  rotation 0 0 1 3.14159
+  name "gate2(4)"
+  controller "gate13"
+  supervisor TRUE
+  rightSlot TinkerbotsDistanceSensor {
+    rotation 0 0 1 -1.5707996938995747
+    name "gateds13"
+  }
+}
+Base1 {
+  translation -1.26 0.0200001 0.725
+  rotation 0 0 1 3.141592653589793
+  name "gate2(3)"
+  controller "gate11"
+  supervisor TRUE
+  rightSlot TinkerbotsDistanceSensor {
+    rotation 0 0 1 1.5707996938995747
+    name "gateds11"
+  }
+}
+Base1 {
+  translation 1.29 0.0200001 0.275
+  rotation 5.87186e-25 9.58979e-09 -1 3.14159
+  name "gate2(2)"
+  controller "gate23"
+  supervisor TRUE
+  leftSlot TinkerbotsDistanceSensor {
+    rotation 0 0 1 -1.5707996938995747
+    name "ds23"
+  }
+}
+Base1 {
+  translation 1.26 0.0200001 -0.725
+  rotation 0 0 1 3.141592653589793
+  name "gate2(1)"
+  controller "gate24"
+  supervisor TRUE
+  leftSlot TinkerbotsDistanceSensor {
+    rotation 0 0 1 1.5707996938995747
+    name "ds24"
+  }
+}
+Base1 {
+  translation 1.26 0.0200001 0.725
+  rotation 0 0 1 3.141592653589793
+  name "gate2"
+  controller "gate22"
+  supervisor TRUE
+  leftSlot TinkerbotsDistanceSensor {
+    rotation 0 0 1 -1.5707996938995747
+    name "gateds22"
+  }
+}
+Ball {
+  color 0.4 1 0
+}
+Base {
+  translation -1.13 0.04 0
+  rotation 0 1 0 1.5708
+  name "rocket 1"
+  controller "rocket1"
+  downSlot TinkerbotsCube {
+    leftSlot TinkerbotsCube {
+      upSlot TinkerbotsMotor {
+        rotation 0 0 1 1.5708003061004252
+        name "rear_motor1"
+        leftSlot TinkerbotsDistanceSensor {
+          rotation 0 0 1 1.5707996938995747
+          name "ds1"
+        }
+        frontSlot TinkerbotsAxle {
+          endSlot TinkerbotsWheel {
+          }
+        }
+        backSlot TinkerbotsAxle {
+          endSlot TinkerbotsWheel {
+          }
+        }
+      }
+    }
+    rightSlot TinkerbotsCube {
+      upSlot TinkerbotsCube {
+        upSlot TinkerbotsMotor {
+          rotation 0 0 1 -1.570795613280012
+          name "front_motor1"
+          rightSlot TinkerbotsDistanceSensor {
+            rotation 0 0 1 -1.5707996938995747
+            name "ds12"
+          }
+          frontSlot TinkerbotsAxle {
+            endSlot TinkerbotsWheel {
+            }
+          }
+          backSlot TinkerbotsAxle {
+            endSlot TinkerbotsWheel {
+            }
+          }
+        }
+        rightSlot TinkerbotsCube {
+        }
+      }
+    }
+  }
+  rightSlot TinkerbotsCube {
+  }
+  extensionSlot [
+    HokuyoUrg04lxug01 {
+      translation 0.04 0.03 0
+      rotation 0 1 0 3.141592653589793
+      name "lidar1"
+      resolution 150
+    }
+  ]
+}
+Base {
+  translation 1.13 0.04 0.03
+  rotation 0 1 0 -1.5707953071795862
+  name "rocket 2"
+  controller "rocket2"
+  downSlot TinkerbotsCube {
+    name "(1)"
+    leftSlot TinkerbotsCube {
+      name "(1)"
+      upSlot TinkerbotsMotor {
+        rotation 0 0 1 1.5708003061004252
+        name "rear_motor2"
+        leftSlot TinkerbotsDistanceSensor {
+          rotation 0 0 1 1.5707996938995747
+          name "ds22"
+        }
+        frontSlot TinkerbotsAxle {
+          endSlot TinkerbotsWheel {
+          }
+        }
+        backSlot TinkerbotsAxle {
+          name "axle(1)"
+          endSlot TinkerbotsWheel {
+          }
+        }
+      }
+    }
+    rightSlot TinkerbotsCube {
+      upSlot TinkerbotsCube {
+        upSlot TinkerbotsMotor {
+          rotation 0 0 1 -1.570795613280012
+          name "front_motor2"
+          rightSlot TinkerbotsDistanceSensor {
+            rotation 0 0 1 -1.5707996938995747
+            name "ds21"
+          }
+          frontSlot TinkerbotsAxle {
+            endSlot TinkerbotsWheel {
+            }
+          }
+          backSlot TinkerbotsAxle {
+            name "axle(1)"
+            endSlot TinkerbotsWheel {
+            }
+          }
+        }
+        rightSlot TinkerbotsCube {
+        }
+      }
+    }
+  }
+  rightSlot TinkerbotsCube {
+  }
+  extensionSlot [
+    HokuyoUrg04lxug01 {
+      translation 0.04 0.03 0
+      rotation 0 1 0 3.141592653589793
+      name "lidar2"
+      resolution 150
+    }
+  ]
+}
