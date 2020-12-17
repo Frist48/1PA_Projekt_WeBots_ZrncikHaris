@@ -106,12 +106,12 @@ while wb_robot_step(TIME_STEP) ~= -1
   ball_pos2 = find(abs(delta_buff-max_delta) < 0.001)
   
   
-  if ball_pos2 < 19 & wall_proximity21>40
-    wb_motor_set_velocity(front_motor2,-8);
-    wb_motor_set_velocity(rear_motor2,-8);
-  elseif ball_pos2 > 19 & wall_proximity22>50
-    wb_motor_set_velocity(front_motor2,8);
-    wb_motor_set_velocity(rear_motor2,8);
+  if ball_pos2 < 19 & wall_proximity21>30
+    wb_motor_set_velocity(front_motor2,-10);
+    wb_motor_set_velocity(rear_motor2,-10);
+  elseif ball_pos2 > 19 & wall_proximity22>40
+    wb_motor_set_velocity(front_motor2,10);
+    wb_motor_set_velocity(rear_motor2,10);
   elseif ball_pos2 == 19
     wb_motor_set_velocity(front_motor2,0);
     wb_motor_set_velocity(rear_motor2,0);
